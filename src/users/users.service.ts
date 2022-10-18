@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './schemas/users.schema';
+// import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class UsersService {
@@ -15,18 +16,28 @@ export class UsersService {
   }
 
   findAll() {
-    return `This action returns all users`;
+    return this.userModel.find().exec();
   }
 
   findOne(id: string) {
-    return `This action returns a #${id} user`;
+    return this.userModel.findById(id);
   }
 
   update(id: string, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return this.userModel.findByIdAndUpdate(
+      {
+        _id: id,
+      },
+      {
+        $set: updateUserDto,
+      },
+      {
+        new: true,
+      },
+      ).exec();
   }
 
   remove(id: string) {
-    return `This action removes a #${id} user`;
+    return this.userModel.deleteOne({ _id: id }).exec();
   }
 }

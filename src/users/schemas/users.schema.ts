@@ -18,6 +18,9 @@ export class User {
   hashPassword() {
     this.password = hashSync(this.password, 10);
   }
+
+  @Prop({ required: true })
+  role: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

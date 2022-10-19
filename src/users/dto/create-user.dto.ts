@@ -15,4 +15,7 @@ export class CreateUserDto {
         message: 'password too weak',
     })
     password: string;
+
+    @IsString()
+    role: string
 }

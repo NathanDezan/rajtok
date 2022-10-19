@@ -13,8 +13,8 @@ export class MusicsController {
   }
 
   @Get('searchall')
-  findAll() {
-    return this.musicsService.findAll();
+  findAll(@Body('limitPage') limitPage: number, @Body('search') search: string, @Body('searchValue') searchValue: string) {
+    return this.musicsService.findAll(limitPage, search, searchValue);
   }
 
   @Get('searchone')

@@ -4,6 +4,7 @@ import { UpdatePlaylistDto } from './dto/update-playlist.dto';
 import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Playlist, PlaylistDocument } from './schemas/playlists.schema';
+import { RecordNotFoundException } from '../exceptions/index';
 
 @Injectable()
 export class PlaylistsService {
@@ -13,29 +14,55 @@ export class PlaylistsService {
     const createdPlaylist = new this.playlistModel(createPlaylistDto);
     return createdPlaylist.save();
   }
-  findAll() {
-    return this.playlistModel.find().exec();
+
+  async findAll(limitPage: number, search?: string, searchValue?: string) {
+    try{
+      const findAllPlaylist = await this.playlistModel
+        .find()
+        .where(search)
+        .equals(searchValue)
+        .limit(limitPage)
+        .exec();
+
+      if(findAllPlaylist){
+        return findAllPlaylist;
+      }else{
+        return null;
+      }
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  findOne(_id: string) {
-    return this.playlistModel.findById(_id);
+  async findOne(id: string): Promise<Playlist> {
+    try{
+      const findPlaylist= await this.playlistModel.findById(id);
+      return findPlaylist;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  update(id: string, updateUserDto: UpdatePlaylistDto) {
-    return this.playlistModel.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      {
-        $set: updateUserDto,
-      },
-      {
-        new: true,
-      },
+  async update(id: string, updatePlaylistDto: UpdatePlaylistDto): Promise<Playlist> {
+    try{
+      const findPlaylist = await this.playlistModel.findByIdAndUpdate(
+        {_id: id,},
+        {$set: updatePlaylistDto,}
+        ,{new: true,}
       ).exec();
+
+      return findPlaylist;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  remove(id: string) {
-    return this.playlistModel.deleteOne({ _id: id }).exec();
+  async remove(id: string) {
+    try{
+      const findPlaylist= await this.playlistModel.deleteOne({ _id: id }).exec();
+      return true;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 }

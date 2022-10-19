@@ -9,19 +9,19 @@ export class Playlist {
   name_playlist: string;
 
   @Prop({ required: true })
-  date_created_playlist: Date;
+  date_created_playlist: string;
 
   @Prop({ required: true })
-  likes_playlist: number;
+  likes_playlist: string;
 
   @Prop({ required: true })
-  energy_playlist: number;
+  energy_playlist: string;
 
   @Prop({ required: true })
-  dancability_playlist: number;
+  dancability_playlist: string;
 
   @Prop({ required: true })
-  popularity_playlist: number;
+  popularity_playlist: string;
 }
 
 export const PlaylistSchema = SchemaFactory.createForClass(Playlist);

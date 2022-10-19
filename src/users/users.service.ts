@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './schemas/users.schema';
+import { RecordNotFoundException } from '../exceptions/index';
 
 @Injectable()
 export class UsersService {
@@ -11,32 +12,56 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     const createdUser = new this.userModel(createUserDto);
-    return createdUser.save();
+    return await createdUser.save();
   }
 
-  findAll() {
-    return this.userModel.find().exec();
+  async findAll(limitPage: number, search?: string, searchValue?: string) {
+    try{
+      // const findAllUser = await this.userModel.find().exec();
+      // return findAllUser;
+      const findAllUser = await this.userModel.find().where(search).equals(searchValue).limit(limitPage).exec();
+      return findAllUser;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  findOne(id: string) {
-    return this.userModel.findById(id);
+  async findOne(id: string): Promise<User> {
+    try{
+      const findUser = await this.userModel.findById(id);
+      return findUser;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
-    return this.userModel.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      {
-        $set: updateUserDto,
-      },
-      {
-        new: true,
-      },
-      ).exec();
+  async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+    try{
+      const findUser = await this.userModel.findByIdAndUpdate({_id: id,},{$set: updateUserDto,},{new: true,}).exec();
+      return findUser;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  remove(id: string) {
-    return this.userModel.deleteOne({ _id: id }).exec();
+  async remove(id: string) {
+    try{
+      const findUser = await this.userModel.deleteOne({ _id: id }).exec();
+      return true;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
+  }
+
+  async findByEmail(email: string, includePassword: boolean = false){
+    try{
+      const findUser = await this.userModel.find().where('email').equals(email).exec();
+
+      if(includePassword){
+        return findUser;
+      }
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 }

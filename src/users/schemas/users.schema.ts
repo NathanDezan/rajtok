@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { hashSync } from 'bcrypt';
 
 export type UserDocument = User & Document;
 
@@ -9,10 +10,14 @@ export class User {
   username: string;
 
   @Prop({ required: true })
-  password: string;
+  email: string;
 
   @Prop({ required: true })
-  email: string;
+  password?: string;
+
+  hashPassword() {
+    this.password = hashSync(this.password, 10);
+  }
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

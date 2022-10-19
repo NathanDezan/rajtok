@@ -13,8 +13,8 @@ export class UsersController {
   }
 
   @Get('/searchall')
-  findAll() {
-    return this.usersService.findAll();
+  findAll(@Body('limitPage') limitPage: number, @Body('search') search: string, @Body('searchValue') searchValue: string) {
+    return this.usersService.findAll(limitPage, search, searchValue);
   }
 
   @Get('/searchone')
@@ -32,3 +32,20 @@ export class UsersController {
     return this.usersService.remove(_id);
   }
 }
+
+/*
+
+example input
+
+  findAll()
+    {
+      "limitPage": 2,
+      "search": "username",
+      "searchValue": "dezan"
+    }
+    {
+      "limitPage": 2,
+      "search": "email",
+      "searchValue": "nathan@email.com"
+    }
+*/

@@ -13,8 +13,8 @@ export class ArtistsController {
   }
 
   @Get('searchall')
-  findAll() {
-    return this.artistsService.findAll();
+  findAll(@Body('limitPage') limitPage: number, @Body('search') search: string, @Body('searchValue') searchValue: string) {
+    return this.artistsService.findAll(limitPage, search, searchValue);
   }
 
   @Get('searchone')
@@ -32,3 +32,44 @@ export class ArtistsController {
     return this.artistsService.remove(_id);
   }
 }
+
+/*
+example input
+
+  create()
+    {
+      "name_artist": "nathan_artist",
+      "popularity_artist": 30
+    }
+    
+  findAll()
+    {
+      "limitPage": 2,
+      "search": "name_artist",
+      "searchValue": "dezan"
+    }
+
+    or
+
+    {
+      "limitPage": 2,
+      "search": "popularity_artist",
+      "searchValue": "nathan@email.com"
+    }
+
+  findOne()
+    {
+      "_id": "634ff5f80dcbbad3c7a036e0"
+    }
+    
+  update()
+    {
+      "_id": "634ff5f80dcbbad3c7a036e0",
+      "name_artist": "nathan_artist_2"
+    }
+
+  remove()
+    {
+      "_id": "634ff5f80dcbbad3c7a036e0"
+    }
+*/

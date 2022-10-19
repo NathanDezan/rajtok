@@ -4,6 +4,7 @@ import { UpdateArtistDto } from './dto/update-artist.dto';
 import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Artist, ArtistDocument } from './schemas/artists.schema';
+import { RecordNotFoundException } from '../exceptions/index';
 
 @Injectable()
 export class ArtistsService {
@@ -11,31 +12,47 @@ export class ArtistsService {
 
   async create(createArtistDto: CreateArtistDto): Promise<Artist> {
     const createdArtist = new this.artistModel(createArtistDto);
-    return createdArtist.save();
-  }
-  findAll() {
-    return this.artistModel.find().exec();
+    return await createdArtist.save();
   }
 
-  findOne(_id: string) {
-    return this.artistModel.findById(_id);
+  async findAll(limitPage: number, search?: string, searchValue?: string) {
+    try{
+      const findAllArtist = await this.artistModel.find().where(search).equals(searchValue).limit(limitPage).exec();
+
+      if(findAllArtist){
+        return findAllArtist;
+      }else{
+        return null;
+      }
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  update(id: string, updateUserDto: UpdateArtistDto) {
-    return this.artistModel.findByIdAndUpdate(
-      {
-        _id: id,
-      },
-      {
-        $set: updateUserDto,
-      },
-      {
-        new: true,
-      },
-      ).exec();
+  async findOne(id: string): Promise<Artist> {
+    try{
+      const findArtist = await this.artistModel.findById(id);
+      return findArtist;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 
-  remove(id: string) {
-    return this.artistModel.deleteOne({ _id: id }).exec();
+  async update(id: string, updateUserDto: UpdateArtistDto): Promise<Artist> {
+    try{
+      const findArtist = await this.artistModel.findByIdAndUpdate({_id: id,},{$set: updateUserDto,},{new: true,}).exec();
+      return findArtist;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
+  }
+
+  async remove(id: string) {
+    try{
+      const findArtist = await this.artistModel.deleteOne({ _id: id }).exec();
+      return true;
+    } catch(e){
+      throw new RecordNotFoundException();
+    }
   }
 }

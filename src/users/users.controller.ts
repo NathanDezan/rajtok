@@ -37,6 +37,10 @@ export class UsersController {
 
 example input
 
+create()
+  {
+    
+  }
   findAll()
     {
       "limitPage": 2,

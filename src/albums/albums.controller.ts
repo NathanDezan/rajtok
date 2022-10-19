@@ -13,8 +13,8 @@ export class AlbumsController {
   }
 
   @Get('/searchall')
-  findAll() {
-    return this.albumsService.findAll();
+  findAll(@Body('limitPage') limitPage: number, @Body('search') search: string, @Body('searchValue') searchValue: string) {
+    return this.albumsService.findAll(limitPage, search, searchValue);
   }
 
   @Get('/searchone')
@@ -32,3 +32,45 @@ export class AlbumsController {
     return this.albumsService.remove(_id);
   }
 }
+
+/*
+example input
+
+  create()
+    {
+      "name_album": "nathan_album_1",
+      "fk_identity_artist": "fk_identity_nathan"
+    }
+    
+  findAll()
+    {
+      "limitPage": 2,
+      "search": "name_album",
+      "searchValue": "dezan_album"
+    }
+
+    or
+
+    (ainda nao implementado)
+    {
+      "limitPage": 2,
+      "search": "name_artist",
+      "searchValue": "nathan dezan"
+    }
+
+  findOne()
+    {
+      "_id": "634ff5f80dcbbad3c7a036e0"
+    }
+    
+  update()
+    {
+      "_id": "634ffd95276d4ef2494a5838",
+      "name_album": "nathan_album_2"
+    }
+
+  remove()
+    {
+      "_id": "634ff5f80dcbbad3c7a036e0"
+    }
+*/

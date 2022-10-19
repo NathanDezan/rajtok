@@ -17,10 +17,13 @@ export class UsersService {
 
   async findAll(limitPage: number, search?: string, searchValue?: string) {
     try{
-      // const findAllUser = await this.userModel.find().exec();
-      // return findAllUser;
       const findAllUser = await this.userModel.find().where(search).equals(searchValue).limit(limitPage).exec();
-      return findAllUser;
+
+      if(findAllUser){
+        return findAllUser;
+      }else{
+        return null;
+      }
     } catch(e){
       throw new RecordNotFoundException();
     }

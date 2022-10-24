@@ -15,6 +15,7 @@ import { CommentAlbumModule } from './comment_album/comment-album.module';
 import { CommentArtistModule } from './comment_artist/comment-artist.module';
 import { CommentMusicModule } from './comment_music/comment-music.module';
 import { CommentPlaylistModule } from './comment_playlist/comment-playlist.module';
+import { RelationPlaylistsMusicsModule } from './relation_playlists_musics/relation-playlists-musics.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { CommentPlaylistModule } from './comment_playlist/comment-playlist.modul
     MongooseModule.forRoot('mongodb+srv://dezan:8sF4HNOBr5ixyp5N@cluster0.fpik1s7.mongodb.net/?retryWrites=true&w=majority'), 
     UsersModule, ArtistsModule, AlbumsModule, PlaylistsModule, MusicsModule, FollowersModule, 
     LikeMusicModule, LikePlaylistModule, LikeArtistModule, LikeAlbumModule, 
-    CommentAlbumModule, CommentArtistModule, CommentPlaylistModule, CommentMusicModule],
+    CommentAlbumModule, CommentArtistModule, CommentPlaylistModule, CommentMusicModule, 
+    RelationPlaylistsMusicsModule],
 })
 export class AppModule {}

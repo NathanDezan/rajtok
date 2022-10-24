@@ -18,7 +18,6 @@ export class AlbumsService {
   async findAll(limitPage: number, search?: string, searchValue?: string) {
     try{
       if(search == 'name_artist'){
-        /*implementação futura*/        
       }else{
         const findAllAlbum = await this.albumModel
           .find()

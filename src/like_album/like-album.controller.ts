@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { LikeAlbumService } from './like-album.service';
 import { CreateLikeAlbumDto } from './dto/create-like-album.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('like_album')
 @Controller('like_album')
 export class LikeAlbumController {
   constructor(private readonly likeAlbumService: LikeAlbumService) {}

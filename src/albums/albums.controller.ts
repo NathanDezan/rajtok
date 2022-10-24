@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { AlbumsService } from './albums.service';
 import { CreateAlbumDto } from './dto/create-album.dto';
 import { UpdateAlbumDto } from './dto/update-album.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('albums')
 @Controller('albums')
 export class AlbumsController {
   constructor(private readonly albumsService: AlbumsService) {}
@@ -32,45 +34,3 @@ export class AlbumsController {
     return this.albumsService.remove(_id);
   }
 }
-
-/*
-example input
-
-  create()
-    {
-      "name_album": "nathan_album_1",
-      "fk_identity_artist": "fk_identity_nathan"
-    }
-    
-  findAll()
-    {
-      "limitPage": 2,
-      "search": "name_album",
-      "searchValue": "dezan_album"
-    }
-
-    or
-
-    (ainda nao implementado)
-    {
-      "limitPage": 2,
-      "search": "name_artist",
-      "searchValue": "nathan dezan"
-    }
-
-  findOne()
-    {
-      "_id": "634ff5f80dcbbad3c7a036e0"
-    }
-    
-  update()
-    {
-      "_id": "634ffd95276d4ef2494a5838",
-      "name_album": "nathan_album_2"
-    }
-
-  remove()
-    {
-      "_id": "634ff5f80dcbbad3c7a036e0"
-    }
-*/

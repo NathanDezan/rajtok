@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { CommentPlaylistService } from './comment-playlist.service';
 import { CreateCommentPlaylistDto } from './dto/create-comment-playlist.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('comment_playlist')
 @Controller('comment_playlist')
 export class CommentPlaylistController {
   constructor(private readonly commentAlbumService: CommentPlaylistService) {}

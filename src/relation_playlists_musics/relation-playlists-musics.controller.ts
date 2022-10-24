@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { RelationPlaylistsMusicsService } from './relation-playlists-musics.service';
 import { CreateRelationPlaylistsMusicsDto } from './dto/create-relation-playlists-musics.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('relation_playlists_musics')
 @Controller('relation_playlists_musics')
 export class RelationPlaylistsMusicsController {
   constructor(private readonly relationPlaylistsMusicsService: RelationPlaylistsMusicsService) {}

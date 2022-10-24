@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { MusicsService } from './musics.service';
 import { CreateMusicDto } from './dto/create-music.dto';
 import { UpdateMusicDto } from './dto/update-music.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('musics')
 @Controller('musics')
 export class MusicsController {
   constructor(private readonly musicsService: MusicsService) {}

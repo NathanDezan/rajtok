@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ArtistsService } from './artists.service';
 import { CreateArtistDto } from './dto/create-artist.dto';
 import { UpdateArtistDto } from './dto/update-artist.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('artists')
 @Controller('artists')
 export class ArtistsController {
   constructor(private readonly artistsService: ArtistsService) {}
@@ -32,44 +34,3 @@ export class ArtistsController {
     return this.artistsService.remove(_id);
   }
 }
-
-/*
-example input
-
-  create()
-    {
-      "name_artist": "nathan_artist",
-      "popularity_artist": 30
-    }
-    
-  findAll()
-    {
-      "limitPage": 2,
-      "search": "name_artist",
-      "searchValue": "dezan"
-    }
-
-    or
-
-    {
-      "limitPage": 2,
-      "search": "popularity_artist",
-      "searchValue": "nathan@email.com"
-    }
-
-  findOne()
-    {
-      "_id": "634ff5f80dcbbad3c7a036e0"
-    }
-    
-  update()
-    {
-      "_id": "634ff5f80dcbbad3c7a036e0",
-      "name_artist": "nathan_artist_2"
-    }
-
-  remove()
-    {
-      "_id": "634ff5f80dcbbad3c7a036e0"
-    }
-*/

@@ -6,19 +6,25 @@ export type MusicDocument = Music & Document;
 @Schema({versionKey: false, _id: true})
 export class Music {
   @Prop({ required: true })
-  name_music: string;
+  _id: string;
 
   @Prop({ required: true })
-  fk_identity_album: string;
+  name: string;
 
   @Prop({ required: true })
-  popularity_music: number;
+  popularity: number;
 
   @Prop({ required: true })
-  dancability_music: number;
+  dancability: number;
 
   @Prop({ required: true })
-  energy_music: number;
+  energy: number;
+
+  @Prop({ required: true })
+  duration: number;
+
+  @Prop({ required: true })
+  fk_id_album: string;
 }
 
 export const MusicSchema = SchemaFactory.createForClass(Music);

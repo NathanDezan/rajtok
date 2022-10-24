@@ -1,8 +1,25 @@
+import { IsString } from 'class-validator';
+
+
 export class CreateMusicDto {
-    name_music: string;
-    fk_identity_album: string;
-    popularity_music: number;
-    dancability_music: number;
-    energy_music: number;
-    duration_music: number;
+    @IsString()
+    _id: string;
+
+    @IsString()
+    name: string;
+
+    @IsString()
+    popularity: number;
+
+    @IsString()
+    dancability: number;
+
+    @IsString()
+    energy: number;
+
+    @IsString()
+    duration: number;
+
+    @IsString()
+    fk_id_album: string;
 }

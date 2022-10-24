@@ -32,24 +32,3 @@ export class UsersController {
     return this.usersService.remove(_id);
   }
 }
-
-/*
-
-example input
-
-create()
-  {
-    
-  }
-  findAll()
-    {
-      "limitPage": 2,
-      "search": "username",
-      "searchValue": "dezan"
-    }
-    {
-      "limitPage": 2,
-      "search": "email",
-      "searchValue": "nathan@email.com"
-    }
-*/

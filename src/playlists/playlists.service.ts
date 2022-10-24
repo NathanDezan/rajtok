@@ -5,6 +5,7 @@ import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Playlist, PlaylistDocument } from './schemas/playlists.schema';
 import { RecordNotFoundException } from '../exceptions/index';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class PlaylistsService {
@@ -12,6 +13,7 @@ export class PlaylistsService {
 
   async create(createPlaylistDto: CreatePlaylistDto): Promise<Playlist> {
     const createdPlaylist = new this.playlistModel(createPlaylistDto);
+    createdPlaylist._id = uuidv4();
     return createdPlaylist.save();
   }
 

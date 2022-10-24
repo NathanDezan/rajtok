@@ -6,22 +6,25 @@ export type PlaylistDocument = Playlist & Document;
 @Schema({versionKey: false, _id: true})
 export class Playlist {
   @Prop({ required: true })
-  name_playlist: string;
+  _id: string;
 
   @Prop({ required: true })
-  date_created_playlist: string;
+  name: string;
 
   @Prop({ required: true })
-  likes_playlist: string;
+  date_created: string;
 
   @Prop({ required: true })
-  energy_playlist: string;
+  energy: string;
 
   @Prop({ required: true })
-  dancability_playlist: string;
+  dancability: string;
 
   @Prop({ required: true })
-  popularity_playlist: string;
+  popularity: string;
+
+  @Prop({ required: true })
+  fk_id_user: string;
 }
 
 export const PlaylistSchema = SchemaFactory.createForClass(Playlist);

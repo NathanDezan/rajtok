@@ -6,11 +6,15 @@ export type UserDocument = User & Document;
 
 @Schema({versionKey: false, _id: true})
 export class User {
-  @Prop({ required: true })
-  username: string;
 
   @Prop({ required: true })
-  email: string;
+  _id: string;
+
+  @Prop({ required: true })
+  name: string;
+
+  @Prop({ required: true })
+  username: string;
 
   @Prop({ required: true })
   password?: string;
@@ -19,6 +23,9 @@ export class User {
     this.password = hashSync(this.password, 10);
   }
 
+  @Prop({ required: true })
+  email: string;
+  
   @Prop({ required: true })
   role: string;
 }

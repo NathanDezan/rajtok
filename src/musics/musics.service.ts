@@ -5,6 +5,7 @@ import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Music, MusicDocument } from './schemas/musics.schema';
 import { RecordNotFoundException } from '../exceptions/index';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class MusicsService {
@@ -12,6 +13,7 @@ export class MusicsService {
 
   async create(createMusicDto: CreateMusicDto): Promise<Music> {
     const createdMusic = new this.musicModel(createMusicDto);
+    createdMusic._id = uuidv4();
     return createdMusic.save();
   }
 

@@ -1,3 +1,25 @@
+/* body{
+    background: rgba(254, 44, 85, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border: 1px solid rgba(254, 44, 85, 0.29);
+}
+
+.background{
+    background-color: rgba(254, 44, 85, 0.5);
+}
+
 h3 {
     font-size: 13px;
 }
+
+.div-1{
+    background-color: #EBEBEB;
+    outline: dashed 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Login } from '../login';
-import { v4 as uuidv4 } from 'uuid';
+import { Login } from './login';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +9,17 @@ import { v4 as uuidv4 } from 'uuid';
 export class LoginComponent implements OnInit {
 
   login: Login = {
-    _id: uuidv4(),
-    name: "",
     username: "",
     password: "",
-    email: "",
     role: ""
   };
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  printLogin(login: Login): void {
+    console.log(login.username, login.password);
   }
 }

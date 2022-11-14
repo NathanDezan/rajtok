@@ -13,25 +13,6 @@ input[type=text] {
     font-size: 24px;
 }
 
-/*corrigir daqui pra baixo*/
-/* body{
-    background: rgba(254, 44, 85, 0.22);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
-    border: 1px solid rgba(254, 44, 85, 0.29);
-}
-
-.background{
-    background-color: rgba(254, 44, 85, 0.5);
-}
-
-h3 {
-    font-size: 13px;
-}
-*/
-
 .size-help-user{
     font-size: 1.3vh;
 }
@@ -66,7 +47,7 @@ body {
   
 .container {
     width: 32rem;
-    height: 24rem;
+    height: 32rem;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 5px;
     position: relative;

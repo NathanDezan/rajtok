@@ -3,5 +3,8 @@ body{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    background-color: #FE2C55;
+    background-color: #BEE9E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

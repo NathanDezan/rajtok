@@ -1,24 +1,42 @@
-
 <body>
     <div class="container">
         <div class="div-1">
-            <div class="title"><p>Login</p></div>
-            <form>
-                <label for="username">Username: </label>
-                <input id="username" [(ngModel)]="login.username" placeholder="username"><br>
-                <label for="password">Senha: </label>
-                <input id="password" [(ngModel)]="login.password" placeholder="password">
-            </form>
-            <button class="btn btn-primary">Login</button>
+            <div class="title"><p>Acessar</p></div>
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input id="username" [(ngModel)]="login.username" placeholder="Digite seu usuário" type="username" class="form-control"  aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" placeholder="Digite sua senha" id="password" [(ngModel)]="login.password">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="printLogin(login)">Acessar</button>
         </div>
     </div>
 </body>
 
-                
-<!-- <br>
-            
-<br>
-<br>
+
+<!-- <form>
+    <label for="username">Username: </label>
+    <input id="username" [(ngModel)]="login.username" placeholder="username"><br>
+
+    <label for="password">Senha: </label>
+    <input id="password" [(ngModel)]="login.password" placeholder="password">
+
+    <label for="email">email: </label>
+    <input id="email" [(ngModel)]="login.email" placeholder="email">
+
+    <label for="role">role: </label>
+    <input id="role" [(ngModel)]="login.role" placeholder="role"> 
+
+    <label for="name">login: </label>
+    <input id="name" [(ngModel)]="login.name" placeholder="name">
+</form>
+-->
+<!-- <form>
+    <label for="username">Username: </label>
+    <input id="username" [(ngModel)]="login.username" placeholder="username"><br>
+</form>
 
 <h3>
     seu _id é: {{login._id | lowercase}}<br>
@@ -27,21 +45,4 @@
     seu password é: {{login.password | lowercase}}<br>
     seu email é: {{login.email | lowercase}}<br>
     sua role é: {{login.role | lowercase}}<br>
-</h3> 
-
-        
-<br>
-        
-<label for="email">email: </label>
-<input id="email" [(ngModel)]="login.email" placeholder="email">
-
-<br>
-
-<label for="role">role: </label>
-<input id="role" [(ngModel)]="login.role" placeholder="role"> 
-
-<label for="name">login: </label>
-<input id="name" [(ngModel)]="login.name" placeholder="name">
-
-<br>
--->
+</h3>  -->

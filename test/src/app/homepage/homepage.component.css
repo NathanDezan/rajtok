@@ -1,0 +1,339 @@
+.all-div{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .header-div{
+    background-color: blue;
+    height: 7vh;
+    width: 190vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+} */
+
+.header-div {
+    height: 7vh;
+    width: 190vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+/* .logo-div{
+    background-color: red;
+    height: 5vh;
+    width: 20vh;
+} */
+
+.logo-div {
+    height: 5vh;
+    width: 20vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+.logo-text{
+    font-size: 30px;
+    margin-top: 15px;
+    font-family: Felt;
+}
+/* .search-div{
+    background-color: red;
+    height: 5vh;
+    width: 30vh;
+    margin-left: 58vh;
+} */
+
+.search-div {
+    height: 5vh;
+    width: 30vh;
+    margin-left: 58vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+.form-group{
+    margin-top: 16px;
+}
+
+/* .playlist-div{
+    background-color: red;
+    height: 5vh;
+    width: 5vh;
+    margin-left: 65vh;
+} */
+
+.playlist-div {
+    height: 5vh;
+    width: 5vh;
+    margin-left: 65vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+.create-playlist-text{
+    font-family: Felt;
+    font-size: 13px;
+    margin-left: 7px;
+    margin-top: 15px;
+}
+
+/* .perfil-div{
+    background-color: red;
+    height: 5vh;
+    width: 5vh;
+    margin-left: 4vh;
+} */
+
+.perfil-div {
+    height: 5vh;
+    width: 5vh;
+    margin-left: 4vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-text{
+    font-family: Felt;
+    font-size: 18px;
+    margin-left: 1px;
+    margin-top: 19px;
+}
+
+img{
+    width: 40px;
+}
+
+.user-img{
+    /* background-image: url('./icons/user.svg');
+    background-repeat: no-repeat;
+    width: 40px; */
+    /* background-color: red;
+    width: 40px;
+    height: 40px; */
+}
+
+/* .content-div{
+    background-color: black;
+    height: 80vh;
+    width: 190vh;
+} */
+
+.content-div {
+    margin-top: 20px;
+    height: 80vh;
+    width: 190vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+/* .content-internal-div{
+    background-color: black;
+    width: 70%;
+    height: 95%;
+} */
+
+.content-internal-div {
+    width: 70%;
+    height: 95%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-internal-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+/* .end-div{
+    background-color: blue;
+    height: 12vh;
+    width: 190vh;
+} */
+
+.end-div {
+    margin-top: 20px;
+    height: 8.9vh;
+    width: 190vh;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-div:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+}
+
+
+/* font style */
+* {
+    font-family: Felt;
+}
+
+@font-face {
+    font-family: Felt;
+    src: url(FeltTipRomRegular.ttf);
+}

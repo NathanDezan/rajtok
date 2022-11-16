@@ -1,24 +1,36 @@
 <body>
-    <div class="container">
-        <div class="div-1">
-            <div class="title"><p>Registro</p></div>
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input id="name" [(ngModel)]="register.name" placeholder="Digite seu nome" type="username" class="form-control"  aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="username" class="form-control" placeholder="Digite seu username" id="username" [(ngModel)]="register.username">
-            </div>
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" class="form-control" placeholder="Digite sua senha" id="password" [(ngModel)]="register.password">
-            </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" placeholder="Digite seu e-mail" id="email" [(ngModel)]="register.email">
-            </div>
-            <button type="submit" class="btn btn-primary" (click)="printRegister(register)">Registrar</button>
-        </div>
-    </div>
+  <div class="container">
+    <form class="div-1" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+      <div class="title">
+        <p>Registro</p>
+      </div>
+
+      <div class="form-group">
+          <label for="name">Nome</label>
+          <input id="name" placeholder="Digite seu nome" type="username"
+            class="form-control" aria-describedby="emailHelp"
+            formControlName="name"
+          />
+      </div>
+      <div class="form-group">
+          <label for="username">Username</label>
+          <input type="username" class="form-control"
+            placeholder="Digite seu username" id="username"
+            formControlName="username" />
+      </div>
+      <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" class="form-control"
+            placeholder="Digite sua senha" id="password"
+            formControlName="password" />
+      </div>
+      <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" class="form-control"
+            placeholder="Digite seu e-mail" id="email"
+            formControlName="email" />
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+  </div>
 </body>

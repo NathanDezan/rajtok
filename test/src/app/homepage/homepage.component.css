@@ -18,7 +18,7 @@
 .header-div {
     height: 7vh;
     width: 190vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -52,7 +52,7 @@
 .logo-div {
     height: 5vh;
     width: 20vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -93,7 +93,7 @@
     height: 5vh;
     width: 30vh;
     margin-left: 58vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -133,7 +133,7 @@
     height: 5vh;
     width: 5vh;
     margin-left: 65vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -176,7 +176,7 @@
     height: 5vh;
     width: 5vh;
     margin-left: 4vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -233,7 +233,7 @@ img{
     margin-top: 20px;
     height: 80vh;
     width: 190vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -267,7 +267,7 @@ img{
 .content-internal-div {
     width: 70%;
     height: 95%;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -302,7 +302,7 @@ img{
     margin-top: 20px;
     height: 8.9vh;
     width: 190vh;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -335,5 +335,5 @@ img{
 
 @font-face {
     font-family: Felt;
-    src: url(FeltTipRomRegular.ttf);
+    src: url(./FeltTipRomRegular.TTF);
 }

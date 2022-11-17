@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
 import { v4 as uuid } from 'uuid'
-import { Register } from './register'
 import { RegisterService } from './register.service'
 import { FormBuilder } from '@angular/forms'
 import { MessageBoxService } from '../message-box/message-box.service'
@@ -38,7 +37,7 @@ export class RegisterComponent implements OnInit {
       password: data.password || '',
       email: data.email || ''
     }).subscribe({
-      next: (value) => {
+      next: () => {
         this.registerForm.reset()
         this.messageBox.sendMessage({
           message: 'Usuário criado!',
@@ -51,9 +50,7 @@ export class RegisterComponent implements OnInit {
           message: `Erro criando usuário: ${error.message}`,
           kind: 'danger'
         })
-      },
-
-      complete: () => {}
+      }
     })
   }
 }

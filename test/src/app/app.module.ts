@@ -12,8 +12,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { PlaylistListComponent } from './playlist-list/playlist-list.component';
 import { MessageBoxComponent } from './message-box/message-box.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { PlaylistListItemComponent } from './playlist-list-item/playlist-list-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PlaylistListItemComponent } from './playlist-list-item/playlist-list-item.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { PlaylistListItemComponent } from './playlist-list-item/playlist-list-it
     PlaylistListComponent,
     PlaylistListItemComponent,
     MessageBoxComponent,
+    PlaylistListItemComponent,
   ],
   imports: [
     BrowserModule,

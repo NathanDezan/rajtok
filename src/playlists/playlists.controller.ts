@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { PlaylistsService } from './playlists.service';
 import { CreatePlaylistDto } from './dto/create-playlist.dto';
 import { UpdatePlaylistDto } from './dto/update-playlist.dto';
@@ -15,8 +15,9 @@ export class PlaylistsController {
   }
 
   @Get('searchall')
-  findAll(@Body('limitPage') limitPage: number, @Body('search') search: string, @Body('searchValue') searchValue: string) {
-    return this.playlistsService.findAll(limitPage, search, searchValue);
+  findAll(@Query('limitPage') limitPage: number) {
+    console.warn(limitPage || 10)
+    return this.playlistsService.findAll(10);
   }
 
   @Get('searchone')

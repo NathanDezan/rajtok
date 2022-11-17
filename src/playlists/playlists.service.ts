@@ -19,12 +19,15 @@ export class PlaylistsService {
 
   async findAll(limitPage: number, search?: string, searchValue?: string) {
     try{
-      const findAllPlaylist = await this.playlistModel
+      let findAllPlaylistBuilder = this.playlistModel
         .find()
-        .where(search)
-        .equals(searchValue)
-        .limit(limitPage)
-        .exec();
+
+      if (search && searchValue) {
+        findAllPlaylistBuilder = findAllPlaylistBuilder
+          .where(search).equals(searchValue)
+      }
+
+      const findAllPlaylist = await findAllPlaylistBuilder.limit(limitPage).exec()
 
       if(findAllPlaylist){
         return findAllPlaylist;
@@ -32,6 +35,7 @@ export class PlaylistsService {
         return null;
       }
     } catch(e){
+      console.error(e);
       throw new RecordNotFoundException();
     }
   }

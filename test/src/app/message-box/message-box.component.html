@@ -1,0 +1,9 @@
+<div class="fixed-top">
+  <div class="d-flex justify-content-center">
+    <div>
+      <ngb-toast [autohide]="false" class="d-block text-light" [class]="message.bgClass" *ngFor="let message of currentMessages | async">
+        {{message.message}}
+      </ngb-toast>
+    </div>
+  </div>
+</div>

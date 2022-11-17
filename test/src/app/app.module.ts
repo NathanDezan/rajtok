@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PlaylistListComponent } from './playlist-list/playlist-list.component';
+import { MessageBoxComponent } from './message-box/message-box.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -18,13 +21,15 @@ import { PlaylistListComponent } from './playlist-list/playlist-list.component';
     RegisterComponent,
     HomepageComponent,
     PlaylistListComponent,
+    MessageBoxComponent,
   ],
   imports: [
     BrowserModule,
     Routes,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

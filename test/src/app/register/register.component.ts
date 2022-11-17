@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid'
 import { Register } from './register'
 import { RegisterService } from './register.service'
 import { FormBuilder } from '@angular/forms'
+import { MessageBoxService } from '../message-box/message-box.service'
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private registerService: RegisterService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private messageBox : MessageBoxService
     ) {
   }
 
@@ -38,11 +40,17 @@ export class RegisterComponent implements OnInit {
     }).subscribe({
       next: (value) => {
         this.registerForm.reset()
-        console.log("Success!")
+        this.messageBox.sendMessage({
+          message: 'Usuário criado!',
+          kind: 'success'
+        })
       },
 
       error: (error) => {
-        console.warn(error)
+        this.messageBox.sendMessage({
+          message: `Erro criando usuário: ${error.message}`,
+          kind: 'danger'
+        })
       },
 
       complete: () => {}

@@ -9,9 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { HomeComponent } from './home/home.component';
 import { PlaylistListComponent } from './playlist-list/playlist-list.component';
-import { PlaylistComponentComponent } from './playlist-component/playlist-component.component';
 
 @NgModule({
   declarations: [
@@ -19,9 +17,7 @@ import { PlaylistComponentComponent } from './playlist-component/playlist-compon
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    HomeComponent,
     PlaylistListComponent,
-    PlaylistComponentComponent
   ],
   imports: [
     BrowserModule,

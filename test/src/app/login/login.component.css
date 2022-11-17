@@ -13,25 +13,6 @@ input[type=text] {
     font-size: 24px;
 }
 
-/*corrigir daqui pra baixo*/
-/* body{
-    background: rgba(254, 44, 85, 0.22);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
-    border: 1px solid rgba(254, 44, 85, 0.29);
-}
-
-.background{
-    background-color: rgba(254, 44, 85, 0.5);
-}
-
-h3 {
-    font-size: 13px;
-}
-*/
-
 .size-help-user{
     font-size: 1.3vh;
 }
@@ -41,12 +22,7 @@ h2{
 }
 
 * {
-    font-family: Loew;
-}
-
-@font-face {
-    font-family: Loew;
-    src: url(Loew-Regular.otf);
+    font-family: "Monaco", monospace;
 }
 
 .div-1{
@@ -62,6 +38,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #f8f9fa;
 }
   
 .container {

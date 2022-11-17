@@ -22,12 +22,7 @@ h2{
 }
 
 * {
-    font-family: Loew;
-}
-
-@font-face {
-    font-family: Loew;
-    src: url(Loew-Regular.otf);
+    font-family: "Monaco", monospace;
 }
 
 .div-1{
@@ -39,6 +34,7 @@ h2{
 }
 
 body {
+    background-color: #f8f9fa;
     display: grid;
     align-items: center;
     justify-content: center;

@@ -7,9 +7,9 @@ import { Register } from './register';
 })
 export class RegisterService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient : HttpClient) { }
 
-  register(user: Register) {
+  register(user : Register) {
     return this.httpClient.post('/api/users', user, {});
   }
 }

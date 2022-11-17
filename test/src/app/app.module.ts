@@ -9,20 +9,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { MessageBoxComponent } from './message-box/message-box.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    MessageBoxComponent,
   ],
   imports: [
     BrowserModule,
     Routes,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Playlist } from '../model/playlist.interface';
+import { HomepageService } from './homepage.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  playlists: Observable<Playlist[]>
+
+  constructor(
+    private service: HomepageService
+  ) {
+    this.playlists = service.getPlaylists()
+  }
 
   ngOnInit(): void {
   }

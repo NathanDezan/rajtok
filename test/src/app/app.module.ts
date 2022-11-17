@@ -13,6 +13,7 @@ import { PlaylistListComponent } from './playlist-list/playlist-list.component';
 import { MessageBoxComponent } from './message-box/message-box.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { PlaylistListItemComponent } from './playlist-list-item/playlist-list-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     RegisterComponent,
     HomepageComponent,
     PlaylistListComponent,
+    PlaylistListItemComponent,
     MessageBoxComponent,
   ],
   imports: [

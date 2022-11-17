@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Playlist } from '../playlist.interface';
+import { Playlist } from '../model/playlist.interface';
 
 @Component({
   selector: 'app-playlist-list-item',
@@ -11,9 +11,8 @@ export class PlaylistListItemComponent implements OnInit {
   @Input()
   playlist!: Playlist
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
-
 }

@@ -19,7 +19,9 @@
         </div>
     </div>
     <div class="content-div">
-        <div class="content-internal-div"></div>
+        <div class="content-internal-div">
+          <app-playlist-list [playlists]="playlists | async"></app-playlist-list>
+        </div>
     </div>
     <div class="end-div"></div>
 </div>
